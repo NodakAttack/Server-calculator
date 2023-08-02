@@ -49,7 +49,7 @@ function renderToDOM(calcs){
 
     for(let calc of calcs) {
         outputList.innerHTML += `
-            <p>${calc.number1} ${calc.operator} ${calc.number2} = </p>
+            <p>${calc.number1} ${calc.operator} ${calc.number2} = ${calc.result}</p>
         `
     }
 }
