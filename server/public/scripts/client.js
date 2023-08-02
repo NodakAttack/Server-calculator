@@ -41,11 +41,10 @@ function getCalcs(){
         alert("Something went wrong 2");
     })
 }
-getCalcs();
 
 function renderToDOM(calcs){
     let outputList = document.querySelector('#output');
-    outputList.innerHTML = ''
+    outputList.innerHTML = `<h2>${calcs.at(-1).result}</h2>`
 
     for(let calc of calcs) {
         outputList.innerHTML += `
