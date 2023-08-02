@@ -15,7 +15,10 @@ app.post('/calc', (req,res) => {
     res.sendStatus(201);
 })
 
-
+app.get('/calc', function(req, res){
+    console.log('request for /calc was made');
+    res.send(calcList)
+})
 
 
 

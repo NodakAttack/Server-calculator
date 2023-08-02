@@ -30,3 +30,15 @@ function operatorClick(operatorFromHTML){
     operator = operatorFromHTML;
 }
 
+function getCalcs(){
+    axios.get('/calc').then((response) => {
+        console.log('success', response);
+        let calcsFromServer = response.data;
+        // render to dom goes here
+        console.log('calcs from server', calcsFromServer);
+    }).catch((error) => {
+        console.log(error);
+        alert("Something went wrong 2");
+    })
+}
+getCalcs();
