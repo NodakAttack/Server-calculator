@@ -5,8 +5,8 @@ let operator = null;
 function submitForm(event){
     event.preventDefault();
     // convert values to number?
-    let number1 = document.querySelector("#number1").value;
-    let number2 = document.querySelector("#number2").value;
+    let number1 = Number(document.querySelector("#number1").value);
+    let number2 = Number(document.querySelector("#number2").value);
 
     let operationToAdd = {
         number1: number1,
