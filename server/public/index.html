@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Server Side Calculator</h1>
     <!-- calculator inputs -->
     <form onsubmit="submitForm(event)">
-        <input type="text" id="number1"/>
-        <input type="button" class="operator" onclick="operatorClick(this.value)" value="+"/>
-        <input type="button" class="operator" onclick="operatorClick(this.value)" value="-"/>
-        <input type="button" class="operator" onclick="operatorClick(this.value)"  value="*"/>
-        <input type="button" class="operator" onclick="operatorClick(this.value)"  value="/"/>
-        <input type="text" id="number2"/>
-        <input type="button" id="equals" value="=" onclick="submitForm(event)"/>
-        <input type="reset" id="clear" value="C"/>
+        <input type="text" id="number1" />
+        <input type="button" class="operator" onclick="operatorClick(this.value)" value="+" />
+        <input type="button" class="operator" onclick="operatorClick(this.value)" value="-" />
+        <input type="button" class="operator" onclick="operatorClick(this.value)" value="*" />
+        <input type="button" class="operator" onclick="operatorClick(this.value)" value="/" />
+        <input type="text" id="number2" />
+        <input type="button" id="equals" value="=" onclick="submitForm(event)" />
+        <input type="reset" id="clear" value="C" />
     </form>
-<!-- calculation output -->
-    <div id ='output'></div>
-    
+    <!-- calculation output -->
+    <div id='output'></div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/client.js"></script>
 </body>
+
 </html>
