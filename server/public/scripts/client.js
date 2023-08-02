@@ -18,7 +18,7 @@ function submitForm(event){
         console.log(response);
         document.querySelector("#number1").value = '';
         document.querySelector("#number2").value = '';
-            // get calcs goes here
+            getCalcs();
     }).catch((error) => {
         console.log(error);
         alert('Something went wrong 1')
@@ -34,7 +34,7 @@ function getCalcs(){
     axios.get('/calc').then((response) => {
         console.log('success', response);
         let calcsFromServer = response.data;
-        // render to dom goes here
+        renderToDOM(calcsFromServer)
         console.log('calcs from server', calcsFromServer);
     }).catch((error) => {
         console.log(error);
@@ -42,3 +42,14 @@ function getCalcs(){
     })
 }
 getCalcs();
+
+function renderToDOM(calcs){
+    let outputList = document.querySelector('#output');
+    outputList.innerHTML = ''
+
+    for(let calc of calcs) {
+        outputList.innerHTML += `
+            <p>${calc.number1} ${calc.operator} ${calc.number2} = </p>
+        `
+    }
+}
