@@ -26,9 +26,6 @@ function submitForm(event){
     console.log('operation ', operationToAdd);
 }
 
-function operatorClick(operatorFromHTML){
-    operator = operatorFromHTML;
-}
 
 function getCalcs(){
     axios.get('/calc').then((response) => {
@@ -52,3 +49,23 @@ function renderToDOM(calcs){
         `
     }
 }
+
+function operatorClick(operatorFromHTML){
+    operator = operatorFromHTML;
+    const operatorButtons = document.querySelectorAll(".operator");
+
+    operatorButtons.forEach(button => {
+      button.addEventListener("click", function(event) {
+        // set the background color of all buttons 
+        operatorButtons.forEach(button => {
+          button.style.backgroundColor = '';
+        });
+            // change the listener clicked 
+        event.target.style.backgroundColor = 'red';
+      });
+    });
+}
+
+// function changeButtonColor(button, color) {
+//     button.style.backgroundColor = color;
+// }
